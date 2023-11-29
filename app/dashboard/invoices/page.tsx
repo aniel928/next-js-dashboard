@@ -6,6 +6,17 @@ import { lusitana } from '@/app/ui/fonts';
 import { InvoicesTableSkeleton } from '@/app/ui/skeletons';
 import { Suspense } from 'react';
 import { fetchInvoicesPages } from "@/app/lib/data";
+import { Metadata } from 'next';
+
+// Don't do this. Would have to do this on every page and change everywhere if the company name changed.
+// export const metadata: Metadata = {
+//     title: 'Invoices | Acme Dashboard',
+// };
+
+// Instead use template in root layout file and do this:
+export const metadata: Metadata = {
+    title: 'Invoices',
+};
 
 export default async function Page({searchParams}: {
     searchParams?: {
